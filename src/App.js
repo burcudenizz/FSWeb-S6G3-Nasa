@@ -1,34 +1,41 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import axios from "axios";
 import "./App.css";
-import Content from "./nasa/Content.js";
-import Copyright from "./nasa/Copyright.js";
-import Header from "./nasa/Header.js";
-import Date from "./nasa/Date.js";
-import MainHeading from "./nasa/MainHeading.js";
-import Photo from "./nasa/Photo.js";
-import Explanation from "./nasa/Explanation.js";
-import { sahteVeri } from "./sahte-veri";
-import axios from "./axios";
+import { useEffect, useState } from "react";
+import Component from "./components/Component.js";
 
 function App() {
-  const [tarih, setTarih] = useState("1997-08-21");
-  const [bilgi, setBilgi] = useState(sahteVeri);
+  const [apodData, setApodData] = useState();
+  const [datePicker, setDatePicker] = useState(
+    new Date("2022-08-21").toISOString().slice(0, 10)
+  );
 
   useEffect(() => {
+    // Optionally the request above could also be done as
     axios
-      .get(
-        "https://api.nasa.gov/planetary/apod?api_key=3wkI5lZxyiVojEhKgnaeG2kJwgzf00RAFI97pnsz"
-      )
-      .then((response) => {
-        setData(response.data);
-      });
-  }, [tarih]);
+      .get("https://api.nasa.gov/planetary/apod", {
+        params: {
+          api_key: "HVzFcE0Z91rLced96qLhJFPMTS53Odnfkpz9cFqQ",
+          date: datePicker,
+        },
+      })
+      .then(function(response) {
+        console.log(response);
+        setApodData(response.data);
+      })
+      .catch(function(error) {
+        console.log(error);
+      })
+      .finally(function() {});
+  }, [datePicker]);
 
   return (
     <div className="App">
-      <Header />
-      <Content />
-      <Copyright />
+      <Component
+        data={apodData}
+        dateChange={setDatePicker}
+        currentDate={datePicker}
+      />
     </div>
   );
 }
