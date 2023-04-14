@@ -1,38 +1,86 @@
-.App {
-  text-align: center;
+.container {
+  display: flex;
+  justify-content: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+p {
+  color: rgb(255, 255, 255);
+
+  font-size: 1.5rem;
+}
+.content {
+  background-color: rgba(0, 0, 0, 0.8);
+  max-width: 70%;
+  max-height: 60%;
+  border-radius: 20px;
+  margin: 5rem;
+  color: rgb(255, 255, 255);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.headingDiv {
+  display: flex;
+  justify-content: space-around;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.topPart {
+  display: flex;
+  justify-content: center;
+}
+.column {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  margin-left: 4rem;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+}
+.date {
+  font-family: "Nanum Pen Script", cursive;
+  font-size: 3rem;
+  margin-left: 4rem;
 }
 
-.App-link {
-  color: #61dafb;
+.heading {
+  font-family: "Nanum Pen Script", cursive;
+  font-size: 6rem;
+  word-wrap: break-word;
+  display: flex;
+  align-items: center;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+img {
+  margin-top: 8rem;
+  margin-left: 4rem;
+  border-radius: 20px;
+  border: 3px solid white;
+}
+h3 {
+  font-family: "Pridi", serif;
+  font-size: 2rem;
+  letter-spacing: 5px;
+}
+.secondPart {
+  display: flex;
+  justify-content: center;
+  margin: 5rem;
+}
+.dateChoose {
+  width: 45rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-right: 3px solid white;
+}
+.explain {
+  max-width: 70%;
+  margin-left: 3rem;
+}
+input {
+  max-width: 60%;
+  padding: 1rem;
+}
+label {
+  font-family: "Pridi", serif;
+  font-size: 1.5rem;
+  padding-top: 4rem;
+}
+p {
+  font-family: "Pridi", serif;
 }

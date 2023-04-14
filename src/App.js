@@ -15,8 +15,7 @@ function App() {
     axios
       .get("https://api.nasa.gov/planetary/apod", {
         params: {
-          api_key: "HVzFcE0Z91rLced96qLhJFPMTS53Odnfkpz9cFqQ",
-          date: datePicker,
+          api_key: "RgsbYllrURGHLvXLhG5FSCSvlnQGh3Wa1bBxMZmr",
         },
       })
       .then(function(response) {
